@@ -9,6 +9,8 @@ public class Shape : MonoBehaviour {
     private string m_ShapeName;
     private int m_ShapeLife;
 
+    // ENCAPSULATION
+
     // Encapsulated fields
     public string ShapeName {
         get { return m_ShapeName; }
@@ -34,19 +36,13 @@ public class Shape : MonoBehaviour {
         }
     }
 
-    protected void DisplayText(string text) {
-        UIText.text = text;
-    }
-
-    private void Start() {
-        
-    }
-
-    private void Update() {
-        
-    }
-
     protected virtual void OnMouseDown() {
         DisplayText("I am a shape");
+    }
+
+    // ABSTRACTION
+
+    protected void DisplayText(string text) {
+        UIText.text = text;
     }
 }
