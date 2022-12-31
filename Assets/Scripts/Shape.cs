@@ -1,6 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class Shape : MonoBehaviour {
+    [Header("UI Components")]
+    [SerializeField] private TextMeshProUGUI UIText;
+
     // Member variables
     private string m_ShapeName;
     private int m_ShapeLife;
@@ -30,8 +34,8 @@ public class Shape : MonoBehaviour {
         }
     }
 
-    protected virtual void DisplayText() {
-
+    protected void DisplayText(string text) {
+        UIText.text = text;
     }
 
     private void Start() {
@@ -42,7 +46,7 @@ public class Shape : MonoBehaviour {
         
     }
 
-    private void OnMouseDown() {
-        DisplayText();
+    protected virtual void OnMouseDown() {
+        DisplayText("I am a shape");
     }
 }
