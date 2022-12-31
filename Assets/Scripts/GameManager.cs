@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     [Header("Links")]
     [TextArea(1, 3)] public string gitHubURL = "https://github.com/ReynaldoReyes03";
